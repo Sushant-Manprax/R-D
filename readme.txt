@@ -14,7 +14,6 @@ This project demonstrates the authentication endpoint setup for the Zoom Meeting
 ### Setup
 1. Open a terminal and navigate to the `meetingsdk-auth-endpoint-sample` directory.
 2. Install dependencies:
-   ```bash
    npm install
 Run the Project
 Start the authentication endpoint server:
