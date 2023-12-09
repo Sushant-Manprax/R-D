@@ -13,7 +13,7 @@ ZoomMtg.i18n.reload('en-US');
 
 function App() {
 
-  var authEndpoint = 'http://192.168.29.139:4000'
+  var authEndpoint = 'http://localhost:4000'
 var sdkKey = 'v5fm6mneTg2_duhTVH3plA'
 var meetingNumber = '84968100631'
 var passWord = '123456'
@@ -22,7 +22,7 @@ var userName = 'JavaScript'
 var userEmail = 'hope.so.meee@gmail.com'
 var registrantToken = ''
 var zakToken = 'eyJ0eXAiOiJKV1QiLCJzdiI6IjAwMDAwMSIsInptX3NrbSI6InptX28ybSIsImFsZyI6IkhTMjU2In0.eyJhdWQiOiJjbGllbnRzbSIsInVpZCI6IjROR3Z1TWYxVElpcGlYQlo2QnRGT3ciLCJpc3MiOiJ3ZWIiLCJzayI6IjAiLCJzdHkiOjEsIndjZCI6InVzMDUiLCJjbHQiOjAsImV4cCI6MTcwMTM0OTkwNywiaWF0IjoxNzAxMzQyNzA3LCJhaWQiOiJ4eUY0bFFIcFFwMkRJWGJiVXVTWDRRIiwiY2lkIjoiIn0.IBelf1JVbBvavOQ0_pXmCnQ0n6D-Qgi93t_MP8dYAsE'
-var leaveUrl = 'http://192.168.29.139:3000'
+var leaveUrl = 'http://localhost:3000'
 
   function getSignature(e) {
     e.preventDefault();
