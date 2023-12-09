@@ -1,58 +1,71 @@
-# Zoom Meeting SDK Project
+# Zoom Meeting SDK React Sample
 
-Welcome to the Zoom Meeting SDK project! This project includes two main components: `meetingsdk-auth-endpoint-sample` and `meetingsdk-react-sample`. Follow the instructions below to set up and run each project.
+**Note:** Use of this sample app is subject to our [Terms of Use](https://explore.zoom.us/en/legal/zoom-api-license-and-tou/).
 
-## 1. meetingsdk-auth-endpoint-sample
+---
 
-### Project Overview
-This project demonstrates the authentication endpoint setup for the Zoom Meeting SDK.
+**Note:** This sample app has been updated to use [Meeting SDK app type](https://developers.zoom.us/docs/meeting-sdk/create/) credentials instead of [JWT app type](https://developers.zoom.us/docs/platform/build/jwt-app/) credentials.
 
-### Prerequisites
-- Node.js installed
-- NPM installed
+---
 
-### Setup
-1. Open a terminal and navigate to the `meetingsdk-auth-endpoint-sample` directory.
-2. Install dependencies:
-   npm install
-Run the Project
-Start the authentication endpoint server:
-bash
+This repo is a [React](https://reactjs.org/) app generated via [Create React App](https://github.com/facebook/create-react-app) that uses the [Zoom Meeting SDK](https://developers.zoom.us/docs/meeting-sdk/web/) to start and join Zoom meetings and webinars.
 
-npm run start
-The authentication endpoint is now running at http://localhost:4000 and make post request.
+![Zoom Meeting SDK Client View](/public/images/meetingsdk-web-client-view.gif)
 
-2. meetingsdk-react-sample
-Project Overview
-This project showcases the integration of Zoom Meeting SDK with a React application.
+## Setup
 
-Prerequisites
-Node.js installed
-NPM installed
-Zoom Meeting SDK installed
-Setup
-Open a terminal and navigate to the meetingsdk-react-sample directory.
-Install dependencies:
-bash
-npm install
-Run the Project
-Start the React application:
-bash
-npm start
+1. **Set Up Docker:**
+   - For `meetingsdk-auth-endpoint` project:
+     Commands
+     cd R-D\meetingsdk-auth-endpoint
+     docker build -t my-react-endpoint .
+     docker run -p 4000:4000 my-react-endpoint
+     ```
 
-Open your browser and visit http://localhost:3000.
+   - For `meetingsdk-react-sample` project:
+     Commands
+     cd R-D\meetingsdk-react-sample\meetingsdk-react
+     docker build -t my-react-app .
+     docker run -p 3000:3000 my-react-app
+     ```
 
-Additional Information
-Zoom Meeting SDK Documentation
-Refer to the official Zoom Meeting SDK documentation for more information on integrating the SDK into your projects: Zoom Meeting SDK Documentation
+     - To run with Docker Compose (when making code changes):
+       ```bash
+       docker-compose up
+       ```
 
-Issues and Support
-If you encounter any issues or need support, please open an issue on the GitHub repository: Zoom Meeting SDK GitHub Repository
+2. **Extra work! Update only when you understand Configure Application:**
+   - Open the `src/App.js` file in your code editor.
+   - Update the following variables with your Zoom Meeting SDK credentials and meeting details if you want to change them to your own or leave them as default.:
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.
+     ```javascript
+     var authEndpoint = 'http://localhost:4000';
+     var sdkKey = 'abc123';
+     var meetingNumber = '123456789';
+     var passWord = '';
+     var role = 0;
+     var userName = 'React';
+     var userEmail = '';
+     var registrantToken = '';
+     var zakToken = '';
+     var leaveUrl = 'http://localhost:3000';
+     ```
 
+   - Save `App.js`.
 
+3. **Usage:**
+   - Navigate to http://localhost:3000 and click "Join Meeting".
 
+   ### Client View
 
+   ![Zoom Meeting SDK Client View](/public/images/meetingsdk-web-client-view.gif)
 
+   ### Component View
+
+   ![Zoom Meeting SDK Component View](/public/images/meetingsdk-web-component-view.gif)
+
+   Learn more about [Gallery View requirements](https://developers.zoom.us/docs/meeting-sdk/web/gallery-view/) and [see more product screenshots](https://developers.zoom.us/docs/meeting-sdk/web/gallery-view/#how-views-look-with-and-without-sharedarraybuffer).
+
+## Need help?
+
+If you're looking for help, try [Developer Support](https://devsupport.zoom.us) or our [Developer Forum](https://devforum.zoom.us). Priority support is also available with [Premier Developer Support](https://explore.zoom.us/docs/en-us/developer-support-plans.html) plans.
